@@ -1,5 +1,7 @@
 package practice;
 
+import java.util.Scanner;
+
 //class Telusko{
 //	void sleep() {
 //		System.out.println("Sleeping...");    // inherited method
@@ -143,3 +145,218 @@ package practice;
 //		t.eat();
 //	}
 //}
+
+// Polymorphism
+
+//abstract class AeroPlane{
+////	abstract int age;    // invalid/ illegal
+//	public abstract void takeOff();
+//	public abstract void fly();
+//	public void takeOff() {
+//		System.out.println("Plane is taking off..");     // overridden method
+//	}
+//	public void fly() {
+//		System.out.println("Plane is flying..");        // overridden method
+//	}
+//}
+//class CargoPlane extends AeroPlane{
+//	public void takeOff() {
+//		System.out.println("CargoPlane is taking off..");     // overridden method
+//	}
+//	public void fly() {
+//		System.out.println("CargoPlane is flying..");         // overridden method
+//	}
+//}
+//class FighterPlane extends AeroPlane{
+//	public void takeOff() {
+//		System.out.println("FighterPlane is taking off..");
+//	}
+//	public void fly() {
+//		System.out.println("FighterPlane is flying..");
+//	}
+//}
+//class Airport{
+//	public void permit(AeroPlane aero) {        // parent reference
+//		System.out.println("Using parent reference: " + aero.getClass().getSimpleName());
+//		aero.takeOff();
+//		aero.fly();
+//		System.out.println("--------------------------");
+//	}
+//}
+//public class Demo{
+//	public static void main(String [] args) {
+//		AeroPlane cp = new CargoPlane();
+//		AeroPlane fp = new FighterPlane();
+//		
+//		Airport a = new Airport();
+//		a.permit(cp);
+//		a.permit(fp);
+		
+//		AeroPlane aero;
+//		Airport a = new Airport();
+//		aero = cp;
+//		
+//		a.permit(aero);
+//		
+//		aero = fp;
+//		a.permit(aero);
+//	}
+//}
+
+// static inheritance
+
+//class Animal{
+//	static int age = 33;
+//	static void disp() {
+//		System.out.println("Parent class static method.");
+//	}
+//}
+//class Dog extends Animal{
+//	static void disp() {
+//		System.out.println("Child class static method.");
+//	}
+//	public void show() {
+//		age = 15;      // updated but referred to parent type only
+//		System.out.println(age);
+//	}
+//}
+//public class Demo{
+//	public static void main(String[] args) {
+//		Dog a = new Dog();
+//		a.disp();
+//		a.show();
+//	}
+//}
+
+// Interface
+
+//interface Calculator{
+//	void sub();
+//}
+//interface Calc{
+//	float pi = 3.14f;
+//	void add(int a, int b);
+//	int mul(int a, int b);
+//}
+//class MyCalc implements Calculator, Calc{
+//	public void add(int a, int b) {
+//		int c = a+b;
+//		System.out.println("Addition: " + c);
+//	}
+//	public int mul(int a, int b) {
+//		return a*b;
+//	}
+//	public void sub() {
+//		System.out.println("sub");
+//	}
+//}
+//class TeluskoLearning{
+//	void add(int a, int b) {
+//		
+//	}
+//}
+//class MyCalc2 extends TeluskoLearning implements Calc{
+//	public void add(int a, int b) {
+//		int c = a+b+100;
+//		System.out.println("Addition: " + c);
+//	}
+//	public int mul(int a, int b) {
+//		return a*b*100;
+//	}
+//}
+//public class Demo{
+//	public static void main(String[] args) {
+//		MyCalc c = new MyCalc();
+//		c.add(2, 3);
+//		System.out.println(c.mul(3, 3));
+//		System.out.println("**********************");
+//		Calc c1 = new MyCalc2();
+//		c1.add(4, 5);
+//		System.out.println(c1.mul(5, 5));
+//	}
+//}
+
+// interface 2
+
+//interface Animal{
+//	default void Dog() {      // default method can use in interface after java 8
+//		System.out.println("Dog barks..");
+//		helper();
+//	}
+//	static void eating() {
+//		System.out.println("Dog is eating..");
+//	}
+//	private void helper() {
+//		System.out.println("private..");
+//	}
+//}
+//class Pet implements Animal{
+//	public void Dog() {
+//		System.out.println("Dog is barking and eating..");
+//	//	Animal.super.Dog();
+//	}
+//}
+//public class Demo{
+//	public static void main(String[] args) {
+//		Pet p = new Pet();
+//		p.Dog();
+//		Animal.eating();
+//	}
+//}
+
+
+
+//interface ICourse{
+//	String course(String name);
+//}
+//class courseAI implements ICourse{
+//	public String course(String name) {
+//		return "Course duration of " + name + " is 5 months.";
+//	}
+//}
+//public class Demo{
+//	public static void main(String[] a) {
+//		ICourse c = new courseAI();
+//		System.out.println(c.course("java"));
+		
+		// option 1
+//		ICourse course = (String name) -> {
+//			return "Course duration of " + name + " is 5 months.";
+//		};
+//		courseInfo(course);
+		
+		// option 2
+//		ICourse course = name -> "Course duration of " + name + " is 5 months.";
+//		courseInfo(course);
+		
+		//option 3
+//		courseInfo(name -> "Course duration of " + name + " is 5 months.");
+//	}
+//	public static void courseInfo(ICourse course) {
+//		System.out.println("Course duration is " + course.course("Java") );
+//	}
+//}
+
+
+public class Demo{
+	public static void main(String[] a) {
+		int arr[][] = new int[3][];
+		arr[0] = new int[4];
+		arr[1] = new int[2];
+		arr[2] = new int[3];
+		Scanner sc = new Scanner(System.in);
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[i].length; j++) {
+				System.out.println("Kindly enter marks of class " + i + " student " + j);
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		System.out.println("Marks are stored as below: ");
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[i].length; j++) {
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
