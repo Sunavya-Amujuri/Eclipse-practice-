@@ -223,7 +223,7 @@ import java.util.*;
 //public class Collections{
 //	public static void main(String[] a) {
 //		
-//		// Linkedlist based on list
+//		// Linkedlist basic adding methods
 //		LinkedList ll = new LinkedList();
 //		ll.add(11);
 //		ll.add(22);

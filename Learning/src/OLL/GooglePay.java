@@ -8,7 +8,7 @@ public class GooglePay extends Thread{
 	}
 	
 	public void run() {
-		System.out.println("Deposit.");
+		System.out.println("Deposit.");    // deposit using GooglePay 
 		bank.deposit(4000);
 	}
 }

@@ -3,7 +3,7 @@ package OLL;
 public class HSBCBank {
 	int accountBal;
 	
-	public HSBCBank(int accountBal) {
+	public HSBCBank(int accountBal) {       // updated
 		this.accountBal = accountBal;
 	}
 	

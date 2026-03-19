@@ -1,6 +1,6 @@
 package OLL;
 
-public class PhonePay extends Thread{
+public class PhonePay extends Thread{        // updated
 	private HSBCBank bank;
 	
 	public PhonePay(HSBCBank bank) {
