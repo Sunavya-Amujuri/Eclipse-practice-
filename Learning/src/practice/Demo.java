@@ -1,6 +1,8 @@
 package practice;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
 
 //class Telusko{
 //	void sleep() {
@@ -149,7 +151,7 @@ import java.util.Scanner;
 // Polymorphism
 
 //abstract class AeroPlane{
-////	abstract int age;    // invalid/ illegal
+//	abstract int age;    // invalid/ illegal
 //	public abstract void takeOff();
 //	public abstract void fly();
 //	public void takeOff() {
@@ -191,7 +193,7 @@ import java.util.Scanner;
 //		Airport a = new Airport();
 //		a.permit(cp);
 //		a.permit(fp);
-		
+//		
 //		AeroPlane aero;
 //		Airport a = new Airport();
 //		aero = cp;
@@ -338,25 +340,266 @@ import java.util.Scanner;
 //}
 
 
-public class Demo{
-	public static void main(String[] a) {
-		int arr[][] = new int[3][];
-		arr[0] = new int[4];
-		arr[1] = new int[2];
-		arr[2] = new int[3];
-		Scanner sc = new Scanner(System.in);
-		for(int i=0; i<arr.length; i++) {
-			for(int j=0; j<arr[i].length; j++) {
-				System.out.println("Kindly enter marks of class " + i + " student " + j);
-				arr[i][j] = sc.nextInt();
-			}
-		}
-		System.out.println("Marks are stored as below: ");
-		for(int i=0; i<arr.length; i++) {
-			for(int j=0; j<arr[i].length; j++) {
-				System.out.print(arr[i][j] + " ");
-			}
-			System.out.println();
-		}
-	}
-}
+//public class Demo{
+//	public static void main(String[] a) {
+//		int arr[][] = new int[3][];
+//		arr[0] = new int[4];
+//		arr[1] = new int[2];
+//		arr[2] = new int[3];
+//		Scanner sc = new Scanner(System.in);
+//		for(int i=0; i<arr.length; i++) {
+//			for(int j=0; j<arr[i].length; j++) {
+//				System.out.println("Kindly enter marks of class " + i + " student " + j);
+//				arr[i][j] = sc.nextInt();
+//			}
+//		}
+//		System.out.println("Marks are stored as below: ");
+//		for(int i=0; i<arr.length; i++) {
+//			for(int j=0; j<arr[i].length; j++) {
+//				System.out.print(arr[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+//	}
+//}
+
+// static 
+
+//class practice
+//{
+//	static int a ,b; //1
+//	
+//	int x ,y;
+//
+//	static  // 2
+//	{
+//		System.out.println("Static init block");
+//	}
+//	
+//	{
+//		System.out.println("Java init block(non static)");
+//	}
+//	
+//	
+//	practice()
+//	{
+//		System.out.println("Constructor");
+//	}
+//	
+//	static  // 2
+//	{
+//		System.out.println("Static init block");
+//	}
+//	static void disp()
+//	{
+//		System.out.println("disp static method");
+//	}
+//	
+//	void show()
+//	{
+//		System.out.println("non static show method");
+//	}
+//}
+//public class Demo
+//{
+//	
+//	static
+//	{
+//		System.out.println("static block main");
+//	}
+//	
+//	public static void main(String[] args) 
+//	{
+//		System.out.println("main method");
+//		
+//		practice d=new practice();
+//		d.show();
+//		
+//		//disp();
+//	}
+//}
+
+//class Parent {
+//    static int x = 10;
+//}
+//
+//class Child extends Parent {
+//    static int x = 20;
+//}
+//
+//public class Demo {
+//    public static void main(String[] args) {
+//        Parent p = new Child();
+//        child();
+//    }
+//}
+
+//class Parent {
+//    static void show() {
+//        System.out.println("Parent show");
+//    }
+//}
+//
+//class Child extends Parent {
+//    static void show() {
+//        System.out.println("Child show");
+//    }
+//}
+//
+//public class Demo {
+//    public static void main(String[] args) {
+//        Parent p = new Child();
+//        p.show();  // parent show,   they are inherited and hidden.
+//    }
+//}
+
+
+//class Parent {
+//    static final int a = 10;
+//
+//    static {
+//        System.out.println("Class Loaded");
+//    }
+//}
+//
+//public class Demo {
+//    public static void main(String[] args) {
+//        System.out.println(Parent.a);    // 10   - constant inlining
+//    }
+//}
+
+//class Animal {
+//    Animal() {
+//        System.out.println("Animal constructor");
+//    }
+//}
+//
+//class Dog extends Animal {
+//    Dog() {
+//    	//super()
+//        System.out.println("Dog constructor");
+//    }
+//}
+//
+//public class Demo {
+//    public static void main(String[] args) {
+//        Dog d = new Dog();   // Animal constructor     Dog constructor
+//    }
+//}
+
+
+// Interface
+//interface Camera {
+//	default void start() {
+//		System.out.println("Default method");
+//	}
+//}
+//
+//interface MusicPlayer {
+//	void start();
+//}
+//
+//class SmartPhone implements Camera, MusicPlayer {
+//	public void start() {
+//        System.out.println("Implemented");    }
+//}
+//
+//public class Demo {
+//    public static void main(String[] args) {
+//        SmartPhone s = new SmartPhone();
+//        s.start();
+////        s.playMusic();
+//    }
+//}
+
+// loose coupling
+
+//interface Animal{
+//	void sound(double amount);
+//}
+//class Dog implements Animal{
+//	public void sound(double amount) {
+//		System.out.println("Dog Barks..");
+//	}
+//}
+//class Cat implements Animal{
+//	public void sound(double amount) {
+//		System.out.println("Cat meows.." + amount);
+//	}
+//}
+//class Zoo{
+//	Animal animal;
+//	
+//	void setAnimal(Animal animal) {
+//		this.animal = animal;
+//	}
+//	public void makeSound(double amount) {
+//		if(animal == null)     // if this not resent then it is null pointer exception
+//			System.out.println("Animal not set.");
+//		else
+//			animal.sound(amount);
+//		
+//	}
+//}
+//public class Demo{
+//	public static void main(String[] args) {
+//		Zoo z = new Zoo();
+//		
+//		//z.setAnimal();  not setting animal intentionally
+//		z.makeSound(4999.9);
+//		
+//		z.setAnimal(new Cat());
+//		z.makeSound(3555.5);
+//	}
+//}
+
+// Lambda expression
+
+//interface ICourse{
+//	String course(String name);
+//}
+//class Demo{
+//	public static void main(String[] a) {
+////		ICourse course = name -> "course name is " + name;
+////		courseInfo(course);
+//		
+//		courseInfo(name -> "course name is " + name);
+//	}
+//	public static void courseInfo(ICourse course) {
+//		System.out.print("name " + course.course("java"));
+//	}
+//}
+
+//import java.util.Arrays;
+//
+//public class Demo
+//{
+//	public static void main(String[] args) 
+//	{
+// 		int []ar=new int[4];
+//		float []ar=new float[4];
+		
+//		double [][]ar=new double[4][3];
+// 		
+// 		System.out.println(ar.getClass().getName());
+// 		String str[]= {"saketh"};
+// 		int a[]= {4,2,3,5,6,1};
+ 		//utility ==> Arrays
+// 		System.out.println(a);
+// 		for(int data:a)
+// 		{
+// 			System.out.print(data+ " ");
+// 		}
+// 		
+// 		Arrays.sort(a);
+// 		
+// 		System.out.println("After sorting");
+// 		for(int data:a)
+// 		{
+// 			System.out.print(data+" ");
+// 		}
+// 		System.out.println();
+// 		int d=Arrays.binarySearch(a, 4);
+// 		System.out.println(d);		
+//	}
+//}
