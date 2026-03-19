@@ -64,7 +64,7 @@ import java.util.*;
 //		}
 //	}
 //	public void run() {
-//		Threadfly();
+//		Threadfly();    // calling method
 //	}
 //}
 //public class MultiThread {

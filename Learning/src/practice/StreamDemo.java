@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
 
+// basic stream method
+
 public class StreamDemo {
 
 	public static void main(String[] args) {

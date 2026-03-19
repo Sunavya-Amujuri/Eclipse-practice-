@@ -6,7 +6,7 @@ import java.util.Collections;
 
 //class Telusko{
 //	void sleep() {
-//		System.out.println("Sleeping...");    // inherited method
+//		System.out.println("Sleeping...");    // Inherited method
 //	}
 //	void dressing() {
 //		System.out.println("Dressing..");
